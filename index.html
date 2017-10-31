@@ -4,11 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Exemplo Webworkers</title>
+  <title>Document</title>
 </head>
 <body>
-  <h1>Hello World!</h1>
+  <div class="application">
+    <img src="img/israel.airplanes.jpg" />
+    <img src="img/israel.beach.jpg" />
+    <img src="img/israel.kotel.jpg" />
+    <img src="img/israel.telaviv.jpg" />
+  </div>
 
-  <script src="./javascripts/client.js"></script>
+  <script>
+    navigator.serviceWorker.register('assets-worker.js')
+      .then(navigator.serviceWorker.ready)
+      .then(function() {
+        console.info('Service worker was successfully registered!');
+      });
+  </script>
 </body>
 </html>
